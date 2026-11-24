@@ -1,28 +1,69 @@
-# LWACNet — Crowd Intelligence · Professional UI Release
+# LWACNet — Crowd Intelligence | Professional UI Release
 
-This is the **Vercel-ready static website + serverless API gateway**, edited from the user's last working **LWACNet_Final_Person_Detection_Motion_MP4_Vercel.zip**. It does **not** contain or modify any Python/PyTorch backend files. The FastAPI model and its uploaded checkpoint remain exactly as they were.
+LWACNet is a Vercel-ready static web application with a serverless API gateway for crowd intelligence and people counting. This release improves the frontend interface while preserving the existing FastAPI and PyTorch backend, including the trained model and its checkpoint.
 
-## Changes in this release
+## Key Updates & Improvements
 
-- Resized/rebalanced the homepage person-detection reference image against the headline on desktop, preserving the exact image asset and original color palette. The source `2926.jpg` and its conventionally upscaled copy have **not** been changed or replaced with generated people/boxes.
-- Removed the three results cards **Inference time / Model throughput / Crowd threshold**. The results page now has one primary **Estimated people** card with a rounded whole-person display.
-- Removed the editable crowd alert threshold slider, original-image **density overlay** section, opacity toggle, and **Optional validation** section. The standalone real **Predicted density heatmap** beside the actual model input remains present.
-- Added restrained UI polish: count-card entrance, quiet people symbol pulse, lightweight card/icon hover, and responsive desktop/mobile hero alignment. Previous scroll reveals, pointer tilt and reduced-motion handling are retained.
-- Preserved image input, camera capture, original/blur/low-resolution/compressed conditions, MP4/WebM browser-side frame sampling, cancellation, per-frame count timeline, density heatmap, and PNG/JSON/CSV exports.
-- No change to `/api/health`, `/api/predict`, Vercel config, model loading, numerical model outputs, or the data format of requests. The backend still emits fractional crowd counts; rounding occurs **only for human-facing display**. Raw model values remain in exports, frame records and API payloads.
+- **Homepage Refinement:** Improved the sizing and alignment of the person-detection reference image with the main headline while preserving the original image asset and color scheme.
+- **Simplified Results Interface:** Removed Inference Time, Model Throughput, and Crowd Threshold cards. Results now feature a single primary **Estimated People** card with rounded whole-number counts.
+- **Streamlined UI:** Removed the editable crowd threshold slider, original-image density overlay, opacity toggle, and optional validation section. The actual predicted density heatmap remains available.
+- **Visual Enhancements:** Added subtle entrance animations, icon effects, card hover interactions, and improved responsive layouts for desktop and mobile devices.
+- **Preserved Functionality:** Retained image uploads, camera capture, image-condition testing, MP4/WebM frame sampling, prediction cancellation, frame-by-frame count timelines, density heatmaps, and PNG/JSON/CSV exports.
+- **Backend Compatibility:** No changes were made to `/api/health`, `/api/predict`, Vercel configuration, model loading, prediction logic, or API request formats.
 
-## Deploy to Vercel
+**Important:** The backend continues to generate fractional crowd-count predictions. Rounding is applied only to the frontend display. Original numerical values remain unchanged in API responses, frame records, and exported data.
 
-1. Use the **same Vercel project** that is already working, when possible. Upload this ZIP in that project’s **Overview → Drop to Deploy** area if supported, or use your existing deployment method. It has `index.html` at ZIP root.
-2. Use **Other** framework, **no build command**. The static frontend consists of `index.html`, `styles.css`, `app.js`, `assets/`, and the Node.js functions in `api/`.
-3. Keep the laptop FastAPI service running on `http://127.0.0.1:8000` and an ngrok tunnel forwarding to port 8000. Test the public ngrok URL's `/health` and your Vercel site's `/api/health` for `"status":"ready"`.
-4. The environment variable `LWACNET_BACKEND_URL` in **Vercel → Environment Variables** should equal the current public HTTPS ngrok backend URL (no trailing `/health`). The existing ZIP’s fallback value is preserved: `https://elliptic-scarcity-hexagram.ngrok-free.dev`. If you have already set this variable on the existing project, **do not add a duplicate**. Update it only if the public URL changes, then redeploy.
-5. Verify live image prediction and MP4 frame prediction using the Analysis Studio. 
+## Deployment Guide (Vercel)
 
-## Scope and limitations
+1. **Open Your Existing Project:** Use the same Vercel project that is already configured and working.
+2. **Upload the ZIP:** Navigate to the project's Overview → Drop to Deploy section, if supported, or use your existing deployment workflow. The ZIP contains `index.html` at its root.
+3. **Configure Framework:** Select `Other` as the framework preset and leave the build command empty.
+4. **Backend Connection:** Keep the local FastAPI service running at `http://127.0.0.1:8000` and maintain an active ngrok tunnel forwarding traffic to port 8000.
+5. **Set Environment Variable:** In Vercel → Environment Variables, configure:
 
-- This frontend uses real results only; test/development automation may simulate gateway responses to validate rendering, but the deployed site has no fake-model fallback.
-- The illustrated hero contains detection boxes from a separate reference image. The LWACNet model itself **does not** output person bounding boxes. The separate displayed heatmap is generated by LWACNet's density prediction.
-- MP4 is decoded by the browser, which sends sampled JPEG frames for image-model inference (up to 24 frames); not identity tracking or full-frame-rate video inference.
-- The free laptop/ngrok connection stays online **only while the local server and tunnel run**. Keep the gateway secured and rate-limited before sharing it broadly.
-- This release was locally checked with automated browser-simulated API responses and a gateway forwarding test. It was **not** deployed to, or live-tested against, the user’s Vercel account from this workspace.
+   `LWACNET_BACKEND_URL`
+
+   Set its value to your current public HTTPS ngrok backend URL without a trailing `/health`.
+
+   Existing fallback URL:
+
+   `https://elliptic-scarcity-hexagram.ngrok-free.dev`
+
+   If this variable already exists in your Vercel project, update it only when the ngrok URL changes. Do not create duplicate variables.
+6. **Verify Deployment:** Check the public ngrok `/health` endpoint and the Vercel `/api/health` endpoint. Both should return `"status":"ready"`.
+7. **Test Predictions:** Open the Analysis Studio and verify image-based and MP4 frame-based predictions.
+
+## Project Structure
+
+```text
+LWACNet/
+│
+├── index.html
+├── styles.css
+├── app.js
+├── assets/
+│
+└── api/
+    └── Serverless API functions
+```
+
+## Technical Scope & Limitations
+
+- **Real Predictions:** The deployed application uses actual model predictions. There is no fake-model fallback.
+- **Detection Visualization:** The homepage hero image is a separate reference illustration containing detection boxes. LWACNet itself does not generate person bounding boxes.
+- **Density Heatmap:** The displayed predicted density heatmap is generated using LWACNet's actual density prediction.
+- **Video Processing:** MP4 videos are decoded in the browser, which extracts and sends sampled JPEG frames for image-based inference (up to 24 frames). This is not identity tracking or full-frame-rate video inference.
+- **Backend Availability:** The free local laptop/ngrok setup works only while the FastAPI server and ngrok tunnel remain active.
+- **Security:** The backend gateway should be properly secured and rate-limited before wider public access.
+
+## Testing & Verification
+
+This release was locally checked using automated browser-simulated API responses and a gateway forwarding test.
+
+**Deployment Status:** The application has not been deployed to or live-tested against the Vercel account from this development environment.
+
+---
+
+**LWACNet — Crowd Intelligence**
+
+*Professional interface. Real-time crowd analysis. Preserved model integrity.*
