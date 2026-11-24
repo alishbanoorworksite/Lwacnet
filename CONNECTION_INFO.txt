@@ -1,0 +1,1 @@
+Backend API routes are unchanged. Fallback ngrok URL: https://elliptic-scarcity-hexagram.ngrok-free.dev ; Vercel env LWACNET_BACKEND_URL overrides it. FastAPI and ngrok must stay running. Check /api/health before predicting.

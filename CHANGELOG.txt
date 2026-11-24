@@ -1,0 +1,10 @@
+LWACNet — UI Refinement (frontend only)
+
+• Hero person-detection image resized and aligned; unchanged image file.
+• Inference time / FPS / threshold cards removed; only estimated people displayed.
+• Threshold control removed.
+• Density overlay and opacity controls removed; true standalone heatmap retained.
+• Optional ground-truth validation section removed.
+• Subtle count, icon, hover and motion effects (respects reduced motion).
+• Image upload, MP4 frame analysis, exports, and serverless API connection preserved.
+• /api/health and /api/predict are byte-for-byte unchanged from previous working ZIP.

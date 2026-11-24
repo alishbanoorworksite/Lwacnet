@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f6f2" />
+  <meta name="description" content="LWACNet — crowd intelligence built for low-resolution and degraded surveillance environments. Explore density-map-based people counting with a lightweight wavelet-attention framework." />
+  <title>LWACNet — Crowd intelligence. Built for real conditions.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 17.5v2a1.5 1.5 0 0 0 1.5 1.5h13a1.5 1.5 0 0 0 1.5-1.5v-2"/></symbol>
+    <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M3 7.5a2 2 0 0 1 2-2h3l1.3-2h5.4l1.3 2H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.5" r="3.5"/></symbol>
+    <symbol id="icon-wave" viewBox="0 0 24 24"><path d="M2 12h4l2.7-7 4.1 14 2.4-7h6.8"/></symbol>
+    <symbol id="icon-person" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><path d="M6.5 21v-6.2A5.5 5.5 0 0 1 12 9.3a5.5 5.5 0 0 1 5.5 5.5V21M8 15v6m8-6v6"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 2 20 6v6c0 5.2-3.5 8.5-8 10-4.5-1.5-8-4.8-8-10V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-down" viewBox="0 0 24 24"><path d="M12 4v13m-5-5 5 5 5-5M5 20h14"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+    <symbol id="icon-scan" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"/><circle cx="12" cy="12" r="4"/><path d="M9 12h6"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10v6m0-9v.2"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="LWACNet home">
+        <span class="brand-mark"><svg class="icon"><use href="#icon-wave"/></svg></span>
+        <span class="brand-label">LWAC<span>Net</span></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#studio">Analysis studio</a>
+        <a href="#technology">Technology</a>
+        <a href="#use-cases">Applications</a>
+      </nav>
+      <div class="header-right">
+        <a class="header-cta" href="#studio">Open studio <svg class="icon"><use href="#icon-arrow"/></svg></a>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><svg class="icon"><use href="#icon-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero section-anchor" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content" data-reveal>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> LIGHTWEIGHT WAVELET ATTENTION COUNTING NETWORK</div>
+          <h1 id="hero-title">Crowd intelligence.<br/><span>Built for real conditions.</span></h1>
+          <p class="hero-lead">A lightweight method for estimating crowd density in blurred, compressed and low-resolution scenes. Upload an image or MP4 video to see actual crowd estimates and predicted heatmaps.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#studio">Start an analysis <svg class="icon"><use href="#icon-arrow"/></svg></a>
+            <a class="button button-outline" href="#technology">How it works</a>
+          </div>
+          <div class="hero-signals" aria-label="Core technologies">
+            <div><span class="signal-icon green"><svg class="icon"><use href="#icon-wave"/></svg></span><span>Wavelet feature<br/>enhancement</span></div>
+            <div><span class="signal-icon sand"><svg class="icon"><use href="#icon-grid"/></svg></span><span>ResNet-18<br/>feature extraction</span></div>
+            <div><span class="signal-icon coral"><svg class="icon"><use href="#icon-scan"/></svg></span><span>CBAM attention<br/>refinement</span></div>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-label="Illustrative person-detection reference image" data-reveal>
+          <div class="hero-photo" id="hero-photo">
+            <img src="/assets/person-detection-user-upscaled.webp" alt="Original user-provided surveillance illustration of pedestrians with color-coded person bounding boxes in a park" width="2400" height="1200" fetchpriority="high" decoding="async"/>
+          </div>
+          <p class="hero-media-caption">Illustrative person-detection reference · LWACNet estimates counts and density maps, not detection boxes.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="overview section-anchor">
+      <div class="container">
+        <div class="section-label"><span>01</span> / WHY LWACNET</div>
+        <div class="section-heading two-column-heading"><h2>Made for the images<br/>the real world produces.</h2><p>Crowd monitoring rarely happens in ideal conditions. LWACNet is designed to preserve useful structure in visually degraded scenes while keeping the counting pipeline efficient.</p></div>
+        <div class="feature-grid">
+          <article class="feature" data-reveal><span class="feature-icon mint"><svg class="icon"><use href="#icon-wave"/></svg></span><h3>Low-resolution aware</h3><p>Wavelet features help retain information about edges and crowd structure when fine image detail is limited.</p></article>
+          <article class="feature" data-reveal><span class="feature-icon amber"><svg class="icon"><use href="#icon-scan"/></svg></span><h3>Focused attention</h3><p>Channel and spatial attention refine informative regions and reduce distractions from background clutter.</p></article>
+          <article class="feature" data-reveal><span class="feature-icon blush"><svg class="icon"><use href="#icon-shield"/></svg></span><h3>Efficient by design</h3><p>A ResNet-18-based backbone and compact density head avoid costly super-resolution reconstruction stages.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio" class="studio section-anchor">
+      <div class="container">
+        <div class="studio-head"><div><div class="section-label"><span>02</span> / ANALYSIS STUDIO</div><h2>A clearer view of every crowd.</h2><p>Upload a crowd image or MP4 video. Videos are processed as sampled frames through the actual LWACNet image model.</p></div><span class="studio-pill" id="model-status" role="status"><span></span> IMAGE-BASED INFERENCE</span></div>
+        <div class="studio-grid">
+          <section class="work-card upload-card" aria-labelledby="upload-heading">
+            <div class="card-head"><h3 id="upload-heading">01 <span>/</span> Select an image or video</h3><span class="card-sublabel">INPUT</span></div>
+            <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Select an image or MP4 video">
+              <input id="image-file" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,video/mp4,.mp4,video/webm,.webm" hidden />
+              <div class="upload-empty" id="upload-empty"><span class="drop-icon"><svg class="icon"><use href="#icon-upload"/></svg></span><strong>Drop a crowd image or MP4 video</strong><span>or click here to browse your files</span><small>Images ≤12 MB · MP4 / WebM video up to 500 MB (processed locally by sampling frames)</small></div>
+              <img class="preview" id="upload-preview" alt="Selected image preview" hidden /><video class="preview video-preview" id="video-preview" controls playsinline preload="metadata" hidden></video>
+              <button type="button" class="replace-image" id="replace-image" hidden>Change file</button>
+            </div>
+            <div class="upload-bottom"><span id="file-name">No file selected</span><button type="button" class="text-button" id="camera-button"><svg class="icon"><use href="#icon-camera"/></svg> Use camera</button><input id="camera-file" type="file" accept="image/*" capture="environment" hidden /></div>
+          </section>
+          <section class="work-card control-card" aria-labelledby="controls-heading">
+            <div class="card-head"><h3 id="controls-heading">02 <span>/</span> Configure analysis</h3><span class="card-sublabel">SETTINGS</span></div>
+            <div class="control-group"><div class="control-title"><span>Image condition</span><small>Simulate common surveillance challenges</small></div><div class="condition-grid" role="group" aria-label="Image condition"><button class="condition active" type="button" data-condition="original" aria-pressed="true"><strong>Original</strong><span>No added degradation</span></button><button class="condition" type="button" data-condition="blur" aria-pressed="false"><strong>Blurred</strong><span>Soft details</span></button><button class="condition" type="button" data-condition="lowres" aria-pressed="false"><strong>Low-res</strong><span>Reduced detail</span></button><button class="condition" type="button" data-condition="jpeg" aria-pressed="false"><strong>Compressed</strong><span>JPEG artifacts</span></button></div></div>
+            <div class="video-options" id="video-options" hidden>
+              <div class="control-title"><span>Video frame sampling</span><small>Each sample is analyzed by the real LWACNet image model. Maximum 24 frames spread across the clip.</small></div>
+              <label class="video-sampling-label" for="video-sampling">Interval <select id="video-sampling"><option value="1">1 second</option><option value="2" selected>2 seconds</option><option value="5">5 seconds</option><option value="10">10 seconds</option></select></label>
+              <p class="video-processing-note" id="video-processing-note">Video is decoded in your browser. Only compressed sampled frames are sent to the model.</p>
+            </div>
+            <button class="button button-primary run-button" type="button" id="run-analysis" disabled><svg class="icon"><use href="#icon-scan"/></svg><span id="run-label">Run LWACNet analysis</span><svg class="icon run-arrow"><use href="#icon-arrow"/></svg></button>
+            <button type="button" class="cancel-button" id="cancel-analysis" hidden>Stop analyzing video</button>
+            <div class="analysis-progress" id="analysis-progress" hidden><div class="analysis-progress-track"><span id="analysis-progress-fill"></span></div><p id="analysis-progress-text">Analyzing frame…</p></div>
+            <p class="studio-helper" id="studio-helper">Choose an image or MP4 to begin. Results are produced only by the real model.</p>
+            <div class="inline-feedback" id="inline-feedback" role="status" aria-live="polite" hidden></div>
+          </section>
+        </div>
+
+        <section class="results" id="results" aria-label="Real LWACNet analysis results" hidden>
+          <div class="results-head">
+            <div><div class="section-label">ANALYSIS RESULTS / MODEL OUTPUT</div><h3>Density, clearly revealed.</h3></div>
+            <span class="verified-label"><svg class="icon"><use href="#icon-check"/></svg> REAL LWACNET RESULT</span>
+          </div>
+          <section class="video-report" id="video-report" hidden aria-label="Video crowd counting over time">
+            <div class="video-report-head"><div><span class="section-label">VIDEO / SAMPLED FRAMES</span><h4>People counted across the clip</h4><p>Frame-by-frame LWACNet predictions, not identity tracking or a continuous video-trained model.</p></div><div class="video-stats"><span><strong id="video-average">—</strong>Average / frame</span><span><strong id="video-peak">—</strong>Peak / frame</span><span><strong id="video-frames">0</strong>Frames analyzed</span></div></div>
+            <div class="video-chart" id="video-chart" aria-label="Crowd count timeline"></div>
+            <div class="video-frame-strip" id="video-frame-strip" aria-label="Select an analyzed video frame"></div>
+            <p class="video-caption" id="video-caption">Select a sample to inspect the original frame and its predicted density heatmap. You can also scrub the uploaded video above.</p>
+          </section>
+          <div class="metrics count-only-metrics">
+            <div class="metric metric-count-only" data-reveal aria-live="polite">
+              <div class="count-copy"><span id="metric-count-title" class="count-label">Estimated people</span><strong id="metric-count">—</strong><small>Whole-person estimate based on the model’s predicted density map</small></div>
+              <span class="count-emblem" aria-hidden="true"><svg class="icon"><use href="#icon-person"/></svg></span>
+            </div>
+          </div>
+          <div class="results-subheading">
+            <div><h4>Model visualization</h4><p>The actual image submitted to the model and its corresponding predicted crowd-density heatmap.</p></div>
+            <span class="technical-chip" id="map-dimensions">DENSITY MAP</span>
+          </div>
+          <div class="visual-pair">
+            <section class="work-card visual-card" data-reveal aria-label="Analyzed input image">
+              <div class="card-head"><h3>Input image</h3><span class="card-sublabel">PROCESSED FRAME</span></div>
+              <div class="visual-canvas-frame"><img id="result-image" alt="Actual image submitted for analysis" /></div>
+              <p class="viz-caption">Prepared crowd image. The backend resizes its copy to 256 × 256 for model inference.</p>
+            </section>
+            <section class="work-card visual-card heatmap-main" data-reveal aria-label="Predicted crowd density heatmap">
+              <div class="card-head"><h3>Predicted density heatmap</h3><span class="card-sublabel">MODEL DENSITY MAP</span></div>
+              <div class="visual-canvas-frame heatmap-stage"><canvas id="density-heatmap" role="img" aria-label="Continuous heatmap from the real LWACNet density prediction"></canvas></div>
+              <div class="continuous-legend"><span>Relative density</span><span class="legend-gradient" aria-hidden="true"></span><span>Low</span><span>High</span></div>
+              <p class="viz-caption">Color represents <strong>relative predicted density in this image</strong>, not probability or individually detected people. Brighter colors indicate higher values.</p>
+            </section>
+          </div>
+          <div class="export-strip"><div><strong>Export your real model output.</strong><span>Download the predicted heatmap, original grayscale map, or model analysis data.</span></div><div class="export-buttons"><button type="button" id="export-json"><svg class="icon"><use href="#icon-down"/></svg> JSON</button><button type="button" id="export-csv"><svg class="icon"><use href="#icon-down"/></svg> CSV</button><button type="button" id="export-png"><svg class="icon"><use href="#icon-down"/></svg> Heatmap PNG</button><button type="button" id="export-raw"><svg class="icon"><use href="#icon-down"/></svg> Raw PNG</button></div></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="technology" class="technology section-anchor"><div class="container"><div class="section-label"><span>03</span> / THE METHOD</div><div class="section-heading two-column-heading"><h2>Intelligence in every layer.</h2><p>An efficient pipeline transforms a degraded crowd image into a density estimate, with frequency-aware features and attention-guided refinement at its core.</p></div><div class="pipeline"><div class="pipeline-step" data-reveal><span>01</span><span class="step-icon"><svg class="icon"><use href="#icon-upload"/></svg></span><h3>Image input</h3><p>Low-resolution or degraded crowd imagery</p></div><div class="pipeline-step" data-reveal><span>02</span><span class="step-icon"><svg class="icon"><use href="#icon-wave"/></svg></span><h3>Wavelet + ResNet-18</h3><p>Frequency-aware and spatial features</p></div><div class="pipeline-step" data-reveal><span>03</span><span class="step-icon"><svg class="icon"><use href="#icon-scan"/></svg></span><h3>CBAM attention</h3><p>Channel and spatial feature refinement</p></div><div class="pipeline-step" data-reveal><span>04</span><span class="step-icon"><svg class="icon"><use href="#icon-grid"/></svg></span><h3>Density output</h3><p>Density map integrated into a crowd count</p></div></div><div class="method-note"><svg class="icon"><use href="#icon-info"/></svg><p>Uploaded MP4 footage is analyzed by sampling individual frames; the supplied checkpoint is an image-based crowd counter, not a temporal object tracker. The supplied model runs Haar DWT, ResNet-18, CBAM and a density prediction head. Bayesian loss belongs to the training approach, not the browser inference step. Accuracy claims require separate benchmarking with verified crowd annotations; the public interface does not invent performance scores.</p></div></div></section>
+
+    <section id="use-cases" class="use-cases section-anchor"><div class="container"><div class="section-label"><span>04</span> / REAL-WORLD APPLICATIONS</div><div class="section-heading two-column-heading"><h2>Built for spaces that move.</h2><p>From transit hubs to large public gatherings, crowd-density awareness supports better situational understanding when visibility and image quality vary.</p></div><div class="case-grid"><article data-reveal><span class="case-number">01 /</span><h3>Transportation hubs</h3><p>Understand crowd distribution across stations, terminals and high-traffic access points.</p></article><article data-reveal><span class="case-number">02 /</span><h3>Public gatherings</h3><p>Support observation of concerts, religious gatherings and event environments.</p></article><article data-reveal><span class="case-number">03 /</span><h3>Urban spaces</h3><p>Estimate occupancy and concentration in markets, retail areas and pedestrian routes.</p></article></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><div><a href="#home" class="footer-brand">LWAC<span>Net</span></a><p>Crowd intelligence. Built for real conditions.</p></div><span>Lightweight Wavelet Attention Counting Network</span><a class="footer-top" href="#home">Back to top ↑</a></div></footer>
+</body>
+</html>
